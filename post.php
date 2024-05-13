@@ -10,7 +10,7 @@ echo " First Name: " . $_POST['first_name'] . "<br>";
 
 echo " Email Address:" . $_POST['email_address'] . "<br>";
 
-echo " Company: " . $.POST['company'] . "<br>";
+echo " Company: " . $_POST['company'] . "<br>";
 
 echo " Physical Address: " . $_POST['physical_address'] . "<br>";
 
