@@ -1,19 +1,19 @@
 <?php
 
-var_dump($_POST);
+$assoc_array = array(
 
-echo "<br>";
+" Last Name: " => $_POST['last_name'] ,
 
-echo " Last Name: " . $_POST['last_name'] . "<br>";
+ " First Name: " => $_POST['first_name'],
 
-echo " First Name: " . $_POST['first_name'] . "<br>";
+ " Email Address:" => $_POST['email_address'],
 
-echo " Email Address:" . $_POST['email_address'] . "<br>";
+ " Company: " => $_POST['company'] ,
 
-echo " Company: " . $_POST['company'] . "<br>";
+ " Physical Address: " => $_POST['physical_address'] ,
 
-echo " Physical Address: " . $_POST['physical_address'] . "<br>";
-
-echo " Date of Birth: " . $_POST['date_of_birth'] . "<br>";
+" Date of Birth: " => $_POST['date_of_birth'] ,
+);
+var_dump($assoc_array);
 
 ?>
