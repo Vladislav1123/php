@@ -14,6 +14,7 @@ $assoc_array = array(
 
 " Date of Birth: " => $_POST['date_of_birth'] ,
 );
-var_dump($assoc_array);
-
+foreach ($assoc_array as $key => $value) {
+    echo $key . ' ' . $value . '<br>';
+}
 ?>
