@@ -15,8 +15,7 @@ $personalInformation = [
 $keys = array_keys($personalInformation);
 $length = count($personalInformation);
 
-for ($i = 0; $i < $length; $i++) {
-    $key = $keys[$i];
-    $value = $personalInformation[$key];
-    echo $key . ' ' . $value . PHP_EOL;
-}
+
+
+?>
+

@@ -17,4 +17,7 @@ $assoc_array = array(
 foreach ($assoc_array as $key => $value) {
     echo $key . ' ' . $value . '<br>';
 }
+
+
 ?>
+
