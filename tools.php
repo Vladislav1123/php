@@ -1,5 +1,6 @@
 <?php
 
+
 echo 'File connected' . '<br>';
 
 function printArray(array $data) {
@@ -14,7 +15,6 @@ function printWithWhile($assoc_array) {
         echo $key . ' ' . $value . '<br>';
     }
 }
-printWithWhile($assoc_array);
 
 function printWithDoWhile($assoc_array) {
     reset($assoc_array);
@@ -28,8 +28,6 @@ function printWithDoWhile($assoc_array) {
     } while ($i < count($assoc_array));
 }
 
-printWithDoWhile($assoc_array);
-
 function printWithFor($assoc_array) {
     $keys = array_keys($assoc_array);
     $length = count($assoc_array);
@@ -41,4 +39,31 @@ function printWithFor($assoc_array) {
     }
 }
 
+function myLocalFunction() {
+    $local_variable = 'Local variable';
+    echo $local_variable . '<br>';
+
+}
+
+function myGlobalFunction() {
+    global $assoc_array;
+    foreach ($assoc_array as $key => $value) {
+        echo $key . ' ' . $value . '<br>';
+}
+
+function printArrayGlobal($assoc_array) {
+    foreach ($assoc_array as $key => $value) {
+        echo $key . ' ' . $value . '<br>';
+    }
+}
+
+
+printArray($assoc_array);
+printWithWhile($assoc_array);
+printWithDoWhile($assoc_array);
 printWithFor($assoc_array);
+myLocalFunction();
+myGlobalFunction();
+printArrayGlobal($assoc_array);
+
+?>
