@@ -45,25 +45,20 @@ function myLocalFunction() {
 
 }
 
-function myGlobalFunction() {
+function myGlobalFunction()
+{
     global $assoc_array;
     foreach ($assoc_array as $key => $value) {
         echo $key . ' ' . $value . '<br>';
-}
-
-function printArrayGlobal($assoc_array) {
-    foreach ($assoc_array as $key => $value) {
-        echo $key . ' ' . $value . '<br>';
     }
+
+    function printArrayGlobal($assoc_array)
+    {
+        foreach ($assoc_array as $key => $value) {
+            echo $key . ' ' . $value . '<br>';
+        }
+    }
+
 }
-
-
-printArray($assoc_array);
-printWithWhile($assoc_array);
-printWithDoWhile($assoc_array);
-printWithFor($assoc_array);
-myLocalFunction();
-myGlobalFunction();
-printArrayGlobal($assoc_array);
 
 ?>

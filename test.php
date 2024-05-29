@@ -12,8 +12,13 @@ require 'tools.php';
         "last_name", 'lastName',
         );
 
-    printArrayGlobal($myArray);
-
+printArray($assoc_array);
+printWithWhile($assoc_array);
+printWithDoWhile($assoc_array);
+printWithFor($assoc_array);
+myLocalFunction();
+myGlobalFunction();
+printArrayGlobal($assoc_array);
 
 ?>
 
