@@ -1,46 +1,14 @@
 <?php
 
 $myArray = array(
-    "Last Name: " => 'testLastName',
-    "First Name: " => 'testFirstName',
-    "Email Address: " => 'testEmailAddress',
-    "Company: " => 'testCompany',
-    "Physical Address: " => 'testPhysicalAddress',
-    "Date of Birth: " => 'testDateOfBirth',
-    "last_name", 'lastName',
+    'name' => 'John Doe',
+    'email' => 'john.doe@example.com',
+    'age' => rand(18, 60), // Random age between 18 and 60
+    'country' => 'USA',
+    'interests' => ['coding', 'music', 'sports']
 );
-
-function printwhile (array $myArray){
-    foreach ($myArray as $key => $value) {
-        echo $key . ' ' . $value . '<br>';
-    }
+foreach ($myArray as $key => $value) {
+    echo $key . ' ' . $value . '<br>';
 }
 
-printwhile($myArray);
 
-var_dump($myArray);
-
-
-/*
-function printDoWhile(array $myArray){
-    foreach ($myArray as $key => $value){
-        echo $key . '' . $value . '<br>';
-    }
-}
-
-printDoWhile($myArray);
-
-var_dump($myArray);
-*/
-
-/*
-function printFor(array $myArray){
-    foreach ($myArray as $key => $value){
-        echo $key . '' . $value . '<br>';
-    }
-}
-
-printFor($myArray);
-
-var_dump($myArray);
-*/
