@@ -1,5 +1,5 @@
 <?php
-
+echo 'Open test.php' . '<br>';
 require 'tools.php';
 
     $myArray = array(
@@ -11,6 +11,7 @@ require 'tools.php';
         "Date of Birth: " => 'testDateOfBirth',
         "last_name", 'lastName',
         );
+$assoc_array = $myArray;
 
 printArray($assoc_array);
 printWithWhile($assoc_array);
@@ -20,5 +21,6 @@ myLocalFunction();
 myGlobalFunction();
 printArrayGlobal($assoc_array);
 
+echo "jytknbiy" ;
 ?>
 
