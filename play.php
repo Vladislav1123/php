@@ -1,5 +1,9 @@
 <?php
 
+//xdebug_break();
+//phpinfo();
+//die();
+
 $myArray = array (
     'name' => 'John Doe',
     'email' => 'john.doe@example.com',
@@ -11,8 +15,8 @@ $myArray = array (
 );
 
 /*
-function printWitchForeach (array $myArray){
-    foreach ($myArray as $key => $value) {
+function printWitchForeach(array $information){
+    foreach ($information as $key => $value) {
         if (is_array($value)) {
             echo implode(', ', $value);
             continue;
@@ -24,11 +28,34 @@ function printWitchForeach (array $myArray){
 printWitchForeach($myArray);
 */
 
-function printFor($myArray){
-    for ($i = 0 ; $i < array($myArray); $i++){
-        echo $myArray [$i] . '<br>';
+//    for ($i = 0 ; $i < array($myArray); $i++) {
+
+/*
+
+function printFor($myArray) {
+    $keys = array_keys($myArray);
+    for ($i = 0 ; $i < count($myArray); $i++) {
+        $key = $keys[$i];
+
+        echo $myArray[$key] . '<br>';
 
     }
 }
+*/
 
-printFor($myArray);
+//printFor($myArray);
+
+
+    $keys = array_keys($myArray);
+    $i=0;
+    while ($i < count($myArray)){
+        $key = $keys[$i];
+        $value = $myArray [$key];
+        if (is_array($value)) {
+            $value = implode(", ", $value);
+        }
+        echo $key . ' ' . $value . '<br>';
+        $i++;
+    }
+
+
