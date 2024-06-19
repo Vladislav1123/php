@@ -44,18 +44,41 @@ function printFor($myArray) {
 */
 
 //printFor($myArray);
-
-
+/*
+function printWhile($myArray)
+{
     $keys = array_keys($myArray);
-    $i=0;
-    while ($i < count($myArray)){
+    $i = 0;
+    while ($i < count($myArray)) {
         $key = $keys[$i];
-        $value = $myArray [$key];
+        $value = $myArray[$key];
         if (is_array($value)) {
             $value = implode(", ", $value);
         }
         echo $key . ' ' . $value . '<br>';
         $i++;
     }
+}
+printWhile($myArray);
+*/
 
+function printDoWhile($myArray)
+{
+    $keys = array_keys($myArray);
+    $i = 0;
 
+    if(count($keys) > 0){
+        do{
+            $key = $keys[$i];
+            $value = $myArray[$key];
+            if(is_array($value)){
+                $value = implode(",", $value);
+            }
+            echo $key . ' ' . $value . '<br>';
+            $i++;
+        } while ($i < count($keys));
+    } else{
+        echo " Масив порожній ";
+    }
+}
+printDoWhile($myArray);
