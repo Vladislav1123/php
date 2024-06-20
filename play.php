@@ -3,7 +3,7 @@
 //xdebug_break();
 //phpinfo();
 //die();
-
+/*
 $myArray = array (
     'name' => 'John Doe',
     'email' => 'john.doe@example.com',
@@ -13,7 +13,7 @@ $myArray = array (
     'interests' => ['coding', 'music', 'sports'],
     'apple' => 'MacOS',
 );
-
+*/
 /*
 function printWitchForeach(array $information){
     foreach ($information as $key => $value) {
@@ -61,7 +61,7 @@ function printWhile($myArray)
 }
 printWhile($myArray);
 */
-
+/*
 function printDoWhile($myArray)
 {
     $keys = array_keys($myArray);
@@ -82,3 +82,14 @@ function printDoWhile($myArray)
     }
 }
 printDoWhile($myArray);
+*/
+
+$mySimpleArray = [85, 78, 92, 65, 74];
+
+$sum = array_sum ($mySimpleArray);
+
+$count = count ($mySimpleArray);
+
+$average = $sum / $count;
+
+echo "$average" ;
