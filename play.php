@@ -86,10 +86,14 @@ printDoWhile($myArray);
 
 $mySimpleArray = [85, 78, 92, 65, 74];
 
-$sum = array_sum ($mySimpleArray);
+function printAverage($mySimpleArray)
+{
+    $sum = array_sum ($mySimpleArray);
+    $count = count ($mySimpleArray);
+    $average = $sum / $count;
 
-$count = count ($mySimpleArray);
+    echo "$average" ;
+}
 
-$average = $sum / $count;
+printAverage($mySimpleArray);
 
-echo "$average" ;
