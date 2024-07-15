@@ -31,4 +31,34 @@ function getUsersList()
     }
    return $users;
 }
+?>
 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New User</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h2>Create New User</h2>
+<form>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required>
+
+    <br><br>
+    <input type="submit" value="Create User">
+</form>
+</body>
+</html>
