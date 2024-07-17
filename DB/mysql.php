@@ -31,34 +31,25 @@ function getUsersList()
     }
    return $users;
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+$first_name = $_POST['first_name'] ?? '';
+$last_name = $_POST['last_name'] ?? '';
+
+
+$connection = createMysqlConnection();
+$stmt = $connection->prepare("INSERT INTO users (first_name, last_name) VALUES (?, ?)");
+$stmt->bind_param ('ss', $first_name, $last_name);
+
+    if ($stmt->execute()) {
+        header('Location: index.php');
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $connection->close();
+    exit();
+}
+
 ?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create New User</title>
-    <style>
-        body{
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-<h2>Create New User</h2>
-<form>
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" required>
-
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name" required>
-
-    <br><br>
-    <input type="submit" value="Create User">
-</form>
-</body>
-</html>
