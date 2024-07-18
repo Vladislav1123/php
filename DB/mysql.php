@@ -33,23 +33,25 @@ function getUsersList()
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$first_name = $_POST['first_name'] ?? '';
-$last_name = $_POST['last_name'] ?? '';
+    $first_name = $_POST['first_name'] ?? '';
+    $last_name = $_POST['last_name'] ?? '';
 
+    function storeUser( $first_name , $last_name )
+    {
+        $connection = createMysqlConnection();
+        $stmt = $connection->prepare("INSERT INTO users (first_name, last_name) VALUES (?, ?)");
+        $stmt->bind_param('ss', $first_name, $last_name);
 
-$connection = createMysqlConnection();
-$stmt = $connection->prepare("INSERT INTO users (first_name, last_name) VALUES (?, ?)");
-$stmt->bind_param ('ss', $first_name, $last_name);
+        if ($stmt->execute()) {
+            header('Location: index.php');
+        } else {
+            echo "Error: " . $stmt->error;
+        }
 
-    if ($stmt->execute()) {
-        header('Location: index.php');
-    } else {
-        echo "Error: " . $stmt->error;
+        $stmt->close();
+        $connection->close();
+        exit();
     }
-
-    $stmt->close();
-    $connection->close();
-    exit();
 }
 
 ?>

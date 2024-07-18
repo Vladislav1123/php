@@ -24,7 +24,7 @@
 </head>
 <body>
 <h2>Create New User</h2>
-<form action="mysql.php" method="post">
+<form action="store_user.php." method="post">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" required>
 
