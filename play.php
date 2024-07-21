@@ -83,7 +83,7 @@ function printDoWhile($myArray)
 }
 printDoWhile($myArray);
 */
-
+/*
 $mySimpleArray = [85, 78, 92, 65, 74];
 
 function printAverage($mySimpleArray)
@@ -96,4 +96,5 @@ function printAverage($mySimpleArray)
 }
 
 printAverage($mySimpleArray);
+*/
 

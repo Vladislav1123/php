@@ -32,10 +32,6 @@ function getUsersList()
    return $users;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $first_name = $_POST['first_name'] ?? '';
-    $last_name = $_POST['last_name'] ?? '';
-
     function storeUser( $first_name , $last_name )
     {
         $connection = createMysqlConnection();
@@ -52,6 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $connection->close();
         exit();
     }
-}
+
 
 ?>
