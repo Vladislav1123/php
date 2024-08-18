@@ -31,15 +31,18 @@ $users = getUsersList();
         <th>ID</th>
         <th>First Name</th>
         <th>Last Name</th>
+        <th>Actions</th>
     </tr>
     <?php foreach ($users as $user) { ?>
         <tr>
             <td> <?= $user['id'] ?> </td>
             <td> <?= $user ['first_name'] ?> </td>
             <td> <?= $user ['last_name'] ?> </td>
+            <td><a href="edit_User.php?id=<?= $user['id'] ?>">Update the user </a></td>
         </tr>
     <?php } ?>
 </table>
+<a href="create_User.php"> Create User </a>
 </body>
 </html>
 
