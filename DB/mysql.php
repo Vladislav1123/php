@@ -50,4 +50,31 @@ function getUsersList()
     }
 
 
+
+
+
+     function userUpdate ($userId)
+     {
+         $connection = createMysqlConnection();
+
+         $query = "SELECT first_name, last_name FROM users WHERE id = ?";
+         $stmt = $connection->prepare($query);
+         $stmt->bind_param("i", $userId);
+         $stmt->execute();
+         $result = $stmt->get_result();
+
+         if ($result->num_rows > 0) {
+             $user = $result->fetch_assoc();
+         } else {
+             echo "Користувач не знайдений.";
+             exit;
+         }
+
+         $stmt->close();
+         $connection->close();
+         return $user;
+
+     }
+
+
 ?>
