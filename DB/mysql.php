@@ -53,7 +53,7 @@ function getUsersList()
 
 
 
-     function userUpdate ($userId)
+     function dataExtraction ($userId)
      {
          $connection = createMysqlConnection();
 
@@ -62,6 +62,8 @@ function getUsersList()
          $stmt->bind_param("i", $userId);
          $stmt->execute();
          $result = $stmt->get_result();
+
+         //var_dump($result);
 
          if ($result->num_rows > 0) {
              $user = $result->fetch_assoc();
