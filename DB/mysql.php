@@ -50,9 +50,6 @@ function getUsersList()
     }
 
 
-
-
-
      function dataExtraction ($userId)
      {
          $connection = createMysqlConnection();
@@ -62,8 +59,6 @@ function getUsersList()
          $stmt->bind_param("i", $userId);
          $stmt->execute();
          $result = $stmt->get_result();
-
-         //var_dump($result);
 
          if ($result->num_rows > 0) {
              $user = $result->fetch_assoc();
@@ -78,5 +73,23 @@ function getUsersList()
 
      }
 
+    function updateUser($first_name , $last_name )
+    {
+        $connection = createMysqlConnection();
+
+        $query = "UPDATE users SET first_name = ?, last_name = ? WHERE id = ?";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("ssi", $first_name, $last_name);
+         $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+        echo "Дані користувача оновлено успішно.";
+         } else {
+         echo "Не вдалося оновити дані користувача.";
+        }
+
+    $stmt->close();
+    $connection->close();
+}
 
 ?>

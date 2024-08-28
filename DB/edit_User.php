@@ -10,23 +10,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     dataExtraction($userId);
     $user = dataExtraction($userId);
 
-    /*
-    $query = "SELECT first_name, last_name FROM users WHERE id = ?";
-    $stmt = $connection->prepare($query);
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-    } else {
-        echo "Користувач не знайдений.";
-        exit;
-    }
-
-    $stmt->close();
-    $connection->close();
-} */
 } else {
     echo " Відсутній ID користувача.";
     exit;
@@ -61,14 +44,14 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 <h2>Редагувати користувача</h2>
 
-<form>
+<form action="store_user.php" method="post">
     <input type="hidden" name="id" value="<?= htmlspecialchars($userId) ?>">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" value="<?= htmlspecialchars($user['first_name']) ?>" required>
     <br>
     <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name" value="<?= htmlspecialchars((string)$user['last_name']) ?>" required>
-    <br>
+    <input type="text" id="last_name" name="last_name" value="<?= htmlspecialchars($user['last_name']) ?>" required>
+    <br><br>
     <input type="submit" value="Update User">
 </form>
 
