@@ -73,13 +73,13 @@ function getUsersList()
 
      }
 
-    function updateUser($first_name , $last_name )
+    function updateUser($userId, $first_name , $last_name )
     {
         $connection = createMysqlConnection();
 
         $query = "UPDATE users SET first_name = ?, last_name = ? WHERE id = ?";
         $stmt = $connection->prepare($query);
-        $stmt->bind_param("ssi", $first_name, $last_name);
+        $stmt->bind_param("ssi", $first_name, $last_name, $userId);
          $stmt->execute();
 
         if ($stmt->affected_rows > 0) {

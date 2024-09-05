@@ -1,5 +1,6 @@
 <?php
 
+global $first_name, $last_name;
 require "mysql.php";
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
