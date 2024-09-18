@@ -15,6 +15,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     echo " Відсутній ID користувача.";
     exit;
 }
+
+    updateUser($userId, $first_name , $last_name );
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +48,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 <h2>Редагувати користувача</h2>
 
-<form action="store_user.php" method="post">
+<form action="edit_User.php" method="post">
     <input type="hidden" name="id" value="<?= htmlspecialchars($userId) ?>">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" value="<?= htmlspecialchars($user['first_name']) ?>" required>
