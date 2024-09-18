@@ -92,4 +92,23 @@ function getUsersList()
     $connection->close();
 }
 
+    function deleteUser($userId)
+{
+         $connection = createMysqlConnection();
+
+            $query = "DELETE FROM users WHERE id = ?";
+            $stmt = $connection->prepare($query);
+             $stmt->bind_param("i", $userId);
+             $stmt->execute();
+
+             if ($stmt->affected_rows > 0) {
+               echo "Користувача успішно видалено.";
+             } else {
+              echo "Не вдалося видалити користувача.";
+         }
+
+        $stmt->close();
+        $connection->close();
+}
+
 ?>
