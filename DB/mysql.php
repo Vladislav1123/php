@@ -18,18 +18,34 @@ function createMysqlConnection(): mysqli
     return $connection;
 }
 
-function getUsersList()
-{
+    function getUsersList($search = '')
+    {
     $connection = createMysqlConnection();
-    $query = 'select id, first_name, last_name from  users';
-    $result = $connection->query($query);
+
+    if ($search) {
+        $query = "SELECT id, first_name, last_name FROM users WHERE first_name LIKE ?";
+        $stmt = $connection->prepare($query);
+        $searchTerm = "%" . $search . "%"; // Додаємо символи для пошуку
+        $stmt->bind_param("s", $searchTerm);
+    } else {
+        $query = "SELECT id, first_name, last_name FROM users";
+        $stmt = $connection->prepare($query);
+    }
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+
     $users = [];
-    if($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()){
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
             $users[] = $row;
         }
     }
-   return $users;
+
+    $stmt->close();
+    $connection->close();
+
+    return $users;
 }
 
     function storeUser( $first_name , $last_name )

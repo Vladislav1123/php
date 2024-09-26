@@ -14,15 +14,30 @@
                 padding: 10px;
                 background-color: gray;
             }
+            .search-container {
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
+<div class="search-container">
+    <form method="GET" action="index.php">
+        <label for="search">Search by username:</label>
+        <input type="text" id="search" name="search" placeholder="Enter your username">
+        <input type="submit" value="Search">
+    </form>
+</div>
+
 <?php
 
 require "mysql.php";
-$users = getUsersList();
+
+$search = $_GET['search'] ?? '';
+
+$users = getUsersList($search);
+
 
 ?>
 
