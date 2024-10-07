@@ -3,6 +3,9 @@
 <head>
     <title> Mysql Project </title>
     <style>
+        body{
+            background-color: lightblue;
+        }
         table{
             width: 100%;
             border-collapse: collapse;
@@ -18,9 +21,20 @@
                 margin-bottom: 20px;
             }
         }
+        heder{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-image: url("https://png.pngtree.com/background/20211215/original/pngtree-digital-matrix-light-effect-blue-abstract-background-picture-image_1466846.jpg");
+            color: yellow;
+        }
     </style>
 </head>
 <body>
+
+<heder>
+    <h1>DevHub</h1>
+</heder>
 
 <div class="search-container">
     <form method="GET" action="index.php">
