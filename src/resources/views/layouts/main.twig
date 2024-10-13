@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Mysql Project </title>
+    <style>
+        body{
+            background-color: lightseagreen;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-image: url("https://storge.pic2.me/cm/820x312/125/5f7a570e671518.11331409.jpg");
+            align-items: center;
+        }
+        h1{
+            color: yellow;
+        }
+        a{
+            color: moccasin;
+        }
+        h2{
+            color: moccasin;
+            text-align: center;
+        }
+        p{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'layouts/header.twig' %}
+
+    {{ block('content') }}
+</body>
+</html>
+
+
