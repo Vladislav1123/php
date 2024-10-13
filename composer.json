@@ -1,0 +1,16 @@
+{
+    "name": "vladislav/registration",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Vladislav\\Registration\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vladislav1123",
+            "email": "167371964+Vladislav1123@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
