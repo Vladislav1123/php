@@ -44,7 +44,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 </head>
 <body>
 
-<h2>Редагувати користувача</h2>
+<h2>Edit user</h2>
 
 <form action="update_User.php" method="post">
     <input type="hidden" name="id" value="<?= htmlspecialchars($userId) ?>">

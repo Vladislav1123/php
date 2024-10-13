@@ -21,6 +21,5 @@ myLocalFunction();
 myGlobalFunction();
 printArrayGlobal($assoc_array);
 
-echo "jytknbiy" ;
 ?>
 
